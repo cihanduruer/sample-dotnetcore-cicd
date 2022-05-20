@@ -43,7 +43,7 @@ jobs:
         ls -la
         
     - name: Upload ReactApp as Build Artifact
-      uses: actions/upload-release-asset@v1
+      uses: actions/upload-artifact@v2
       with:
         name: ReactApp
         path: ./ReactSample/react-app-linux-x64.zip
