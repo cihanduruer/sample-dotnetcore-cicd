@@ -39,10 +39,10 @@ jobs:
       run: |
         cd ReactSample
         dotnet publish -c Release -o ./webapp-release -r linux-x64 --self-contained true /p:UseAppHost=true
-        zip -9 -r -q react-app-linux-x64.zip .
+        zip -9 -r -q react-app-linux-x64.zip ./webapp-release
         
     - name: Upload ReactApp as Build Artifact
       uses: actions/upload-artifact@v2
       with:
         name: ReactApp
-        path: ./webapp-release/react-app-linux-x64.zip
+        path: react-app-linux-x64.zip
