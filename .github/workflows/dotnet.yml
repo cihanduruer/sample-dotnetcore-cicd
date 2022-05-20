@@ -22,16 +22,16 @@ jobs:
         dotnet-version: ${{ matrix.dotnet-version }}
     - name: Restore dependencies
       run: |
-        cd /ReactSample
+        cd ReactSample
         dotnet restore 
       
     - name: Build
       run: |
-        cd ../ReactSample
+        cd ReactSample
         dotnet build --no-restore
         dotnet publish -c Release -o ../dotnet-webapp -r linux-x64 --self-contained true /p:UseAppHost=true
       
     - name: Test
       run: |
-        cd ../ReactSample
+        cd ReactSample
         dotnet test --no-build --verbosity normal
